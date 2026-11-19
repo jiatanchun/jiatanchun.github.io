@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="wrap page-head">
+  <p class="eyebrow">Contact</p>
+  <h1>Have a system to build?</h1>
+  <p class="lede">Tell us what you are working on — a production line that needs vision, a server room that has outgrown itself, or a process your team repeats every day.</p>
+</div>
+
+<section class="contact-section">
+  <div class="wrap contact">
+    <aside class="contact-aside">
+      <h2>What happens next</h2>
+      <ol class="steps">
+        <li><strong>We reply within one business day</strong> with a few questions, if we have any.</li>
+        <li><strong>A short call</strong> to understand your constraints, timeline and budget.</li>
+        <li><strong>A scoped proposal</strong> with milestones and a fixed price where possible.</li>
+      </ol>
+      <h2>Offices</h2>
+      <ul class="office-list">
+        {{- range site.Params.offices }}
+        <li><span>{{ .city }}</span><span class="tz" data-tz="{{ .tz }}">&nbsp;</span></li>
+        {{- end }}
+      </ul>
+    </aside>
+    {{ partial "contact-form.html" . }}
+  </div>
+</section>
+{{ end }}

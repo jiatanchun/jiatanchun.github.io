@@ -1,0 +1,46 @@
+{{- $c := site.Params.contact }}
+<form class="contact-form" id="contact-form" novalidate>
+  <div class="row">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" autocomplete="name" required maxlength="100">
+    </label>
+    <label>
+      <span>Work email</span>
+      <input type="email" name="email" autocomplete="email" required maxlength="200">
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      <span>Company <em>optional</em></span>
+      <input type="text" name="company" autocomplete="organization" maxlength="150">
+    </label>
+    <label>
+      <span>Topic</span>
+      <select name="topic" required>
+        {{- range $c.topics }}<option>{{ . }}</option>{{ end }}
+      </select>
+    </label>
+  </div>
+  <label>
+    <span>How can we help?</span>
+    <textarea name="message" rows="6" required minlength="10" maxlength="5000"></textarea>
+  </label>
+
+  {{/* Honeypot: hidden from humans, bots tend to fill it in. */}}
+  <label class="hp" aria-hidden="true">
+    <span>Website</span>
+    <input type="text" name="website" tabindex="-1" autocomplete="off">
+  </label>
+
+  <label class="consent">
+    <input type="checkbox" name="consent" required>
+    <span>I agree that {{ site.Params.legalEntity }} may use these details to respond to my enquiry, as described in the <a href="{{ "/privacy/" | relURL }}">privacy policy</a>.</span>
+  </label>
+
+  <div class="form-foot">
+    <p class="form-note">Our online form is launching soon.</p>
+    <button class="btn primary" type="submit">Send message</button>
+  </div>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>

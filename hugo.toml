@@ -1,0 +1,39 @@
+baseURL = "https://recursionlab.ai/"
+locale = "en"
+title = "Recursion Lab"
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
+
+[params]
+  description = "Recursion Lab builds hardware-software systems, right-sized data centers, and automated workflows for small and mid-sized businesses. Offices in Paris, San Francisco, Singapore and Guangzhou."
+  tagline = "Paris · San Francisco · Singapore · Guangzhou"
+  slogan = "Always underfit."
+
+  # Legal entity shown in the footer and named as data controller in the privacy policy.
+  # Use the overseas entity (e.g. "Recursion Lab Pte. Ltd.") once it exists.
+  legalEntity = "Recursion Lab"
+
+  [params.contact]
+    # The form is a placeholder for now: it validates but does not send anything.
+    # A ready-made backend (Cloudflare Worker + Turnstile) lives in /worker.
+    topics = ["Integrated systems engineering", "Data center build-out", "Workflow automation", "Something else"]
+
+[[params.offices]]
+  city = "Paris"
+  region = "Europe"
+  tz = "Europe/Paris"
+[[params.offices]]
+  city = "San Francisco"
+  region = "North America"
+  tz = "America/Los_Angeles"
+[[params.offices]]
+  city = "Singapore"
+  region = "Southeast Asia"
+  tz = "Asia/Singapore"
+[[params.offices]]
+  city = "Guangzhou"
+  region = "Greater Bay Area"
+  tz = "Asia/Shanghai"
+
+[minify]
+  minifyOutput = true

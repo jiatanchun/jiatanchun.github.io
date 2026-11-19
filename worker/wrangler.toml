@@ -1,0 +1,17 @@
+name = "recursionlab-contact"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+# Optional: serve the worker on your own domain instead of *.workers.dev
+# routes = [{ pattern = "contact.recursionlab.ai", custom_domain = true }]
+
+[vars]
+ALLOWED_ORIGINS = "https://recursionlab.ai,https://www.recursionlab.ai"
+MAIL_FROM = "website@recursionlab.ai"       # any address on the Email Routing domain
+MAIL_TO = "REPLACE_WITH_YOUR_INBOX@example.com"  # must be a verified Email Routing destination
+
+[[send_email]]
+name = "SEND_EMAIL"
+destination_address = "REPLACE_WITH_YOUR_INBOX@example.com"
+
+# Secret (do not put it here):  npx wrangler secret put TURNSTILE_SECRET

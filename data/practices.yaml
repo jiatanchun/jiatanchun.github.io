@@ -1,0 +1,23 @@
+- title: Integrated Systems Engineering
+  summary: Hardware and software designed together for industrial intelligence and robotics, with FPGA and GPU acceleration where latency and power matter.
+  items:
+    - Industrial vision & inspection
+    - Robotics perception & control
+    - FPGA & GPU acceleration
+    - Edge deployment & integration
+
+- title: Data Center Build-out
+  summary: Small and mid-scale facilities designed around heterogeneous compute — sized for what you run today, ready for what comes next.
+  items:
+    - Capacity & site planning
+    - Heterogeneous compute platforms
+    - Power, cooling & networking
+    - Commissioning & handover
+
+- title: Workflow Automation
+  summary: AI-centered automation for the everyday operations of a growing business, built into the tools your team already uses.
+  items:
+    - Document & data pipelines
+    - Agents & internal tools
+    - Integration with existing systems
+    - Measured, reviewable outcomes

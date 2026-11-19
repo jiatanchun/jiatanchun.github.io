@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="wrap hero">
+  <p class="eyebrow">{{ site.Params.tagline }}</p>
+  <h1 class="slogan">{{ .Params.headline | safeHTML }}</h1>
+  <p class="gloss"><span class="term">{{ .Params.gloss_term }}</span> <span class="pos">adj.</span> {{ .Params.gloss_text }}</p>
+  <p class="lede">{{ .Params.lede }}</p>
+  <div class="cta">
+    <a class="btn primary" href="{{ "/contact/" | relURL }}">Start a conversation</a>
+    <a class="btn" href="#practices">What we do</a>
+  </div>
+</div>
+
+<section id="practices">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Three practices, one stack.</h2>
+      <p>From the sensor on the factory floor to the rack in the server room to the process on your screen — we work across every layer.</p>
+    </div>
+    <div class="grid">
+      {{- range $i, $p := hugo.Data.practices }}
+      <article class="card">
+        <div class="num">{{ printf "%02d" (add $i 1) }}</div>
+        <h3>{{ $p.title }}</h3>
+        <p>{{ $p.summary }}</p>
+        <ul>
+          {{- range $p.items }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head"><h2>How we work.</h2></div>
+    <div class="principles">
+      {{- range hugo.Data.principles }}
+      <div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section id="offices">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Offices.</h2>
+      <p>Three time zones, so someone is always working on your project.</p>
+    </div>
+    <div class="offices">
+      {{- range site.Params.offices }}
+      <div class="office">
+        <p class="city">{{ .city }}</p>
+        <p class="region">{{ .region }}</p>
+        <p class="time"><span class="dot"></span><span data-tz="{{ .tz }}">&nbsp;</span></p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Have a system to build?</h2>
+    <a class="btn primary" href="{{ "/contact/" | relURL }}">Contact us</a>
+  </div>
+</section>
+{{ end }}
